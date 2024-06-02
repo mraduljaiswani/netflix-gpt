@@ -18,6 +18,7 @@ const useTopMovies = () => {
 
   useEffect(() => {
     !TopMovies && getTopMovies();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 export default useTopMovies;
