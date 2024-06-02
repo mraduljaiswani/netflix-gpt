@@ -61,7 +61,7 @@ const Header = () => {
         {user && (
           <div className="flex justify-between">
             <span className="hidden md:block p-2 m-2 h-10 mt-10 font-semibold text-cyan-200 ">
-              {user.displayName.toUpperCase()}
+              {user?.displayName?.toUpperCase()}
             </span>
             {showGpt && (
               <select
