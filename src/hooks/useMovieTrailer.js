@@ -14,6 +14,8 @@ const useMovieTrailer = (movieId) => {
       API_OPTIONS
     );
     const json = await data.json();
+    console.log("getMovieVideo" + json);
+
     const filterData = json.results.filter(
       (video) => video.name === "Official Trailer"
     );
@@ -23,7 +25,7 @@ const useMovieTrailer = (movieId) => {
   };
   useEffect(() => {
     !trailerVideo && getMovieVideo();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 export default useMovieTrailer;

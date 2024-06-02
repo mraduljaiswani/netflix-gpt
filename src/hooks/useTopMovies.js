@@ -13,6 +13,7 @@ const useTopMovies = () => {
       API_OPTIONS
     );
     const json = await data.json();
+    console.log("getTopMovies" + json);
     dispatch(addTopMovies(json.results));
   };
 

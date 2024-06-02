@@ -15,12 +15,13 @@ const useNowPlayingMovies = () => {
       API_OPTIONS
     );
     const json = await data.json();
+    console.log("getNowPlayingMovies" + json);
     dispatch(addNowPlayingMovies(json.results));
   };
 
   useEffect(() => {
     !nowPlayingMovies && getNowPlayingMovies();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 export default useNowPlayingMovies;

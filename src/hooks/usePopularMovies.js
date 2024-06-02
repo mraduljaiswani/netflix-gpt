@@ -13,12 +13,13 @@ const usePopularMovies = () => {
       API_OPTIONS
     );
     const json = await data.json();
+    console.log("getPopularMovies" + json);
     dispatch(addPopularMovies(json.results));
   };
 
   useEffect(() => {
     !popularMovies && getPopularMovies();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 export default usePopularMovies;
