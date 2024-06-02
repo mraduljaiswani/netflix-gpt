@@ -51,11 +51,15 @@ const Header = () => {
 
   return (
     <>
-      <div className=" absolute w-screen px-8  py-4 z-10 bg-gradient-to-b from-black flex justify-between">
-        <img className="w-1/5 -mt-4" src="/Netflix_Logo_PMS.png" alt="" />
+      <div className=" absolute w-screen px-8  py-4 z-10 bg-gradient-to-b from-black flex flex-col md:flex-row justify-between bg-black md:bg-black">
+        <img
+          className="mx-auto md:mx-0 w-1/5 -mt-4"
+          src="/Netflix_Logo_PMS.png"
+          alt=""
+        />
         {user && (
-          <div className="flex">
-            <span className=" p-2 m-2 h-10 mt-10 font-semibold text-cyan-200 ">
+          <div className="flex justify-between">
+            <span className="hidden md:block p-2 m-2 h-10 mt-10 font-semibold text-cyan-200 ">
               {user.displayName.toUpperCase()}
             </span>
             {showGpt && (
@@ -79,7 +83,7 @@ const Header = () => {
               {showGpt ? "HomePage" : "GPT Search"}
             </button>
             <img
-              className=" w-16 h-16 mt-5 "
+              className="hidden md:block w-16 h-16 mt-5 "
               // src="https://occ-0-6247-2186.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229"
               src={user.photoURL}
               alt=""

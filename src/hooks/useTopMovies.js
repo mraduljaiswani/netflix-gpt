@@ -1,11 +1,12 @@
 import { API_OPTIONS } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
 import { addTopMovies } from "../utils/moviesSlice";
 
 const useTopMovies = () => {
   const dispatch = useDispatch();
+  const TopMovies = useSelector((store) => store.movies.TopMovies);
   const getTopMovies = async () => {
     const data = await fetch(
       "https://api.themoviedb.org/3/movie/top_rated?language=Hindi&page=1&region=India",
@@ -16,7 +17,7 @@ const useTopMovies = () => {
   };
 
   useEffect(() => {
-    getTopMovies();
+    !TopMovies && getTopMovies();
   }, []);
 };
 export default useTopMovies;
